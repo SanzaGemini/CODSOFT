@@ -61,4 +61,13 @@ public class NumberGame {
         }
         return "You are out of guesses";
     }
+
+    public boolean playAgain(){
+        System.out.println("Would you like another try? Y/N");
+        return scanner.nextLine().equalsIgnoreCase("y");
+    }
+
+    public String displayScore() {
+        return "Current Score: "+ score;
+    }
 }
