@@ -1,15 +1,19 @@
+import java.io.InputStream;
+import java.util.NoSuchElementException;
 import java.util.Random;
+import java.util.Scanner;
 
 public class NumberGame {
-
-    Random random = new Random();
+    private final Scanner scanner;
+    private final Random random = new Random();
+    private int score;
 
     public NumberGame(){
-
+        this.scanner = new Scanner(System.in);
     }
 
-    public static void main(String[] args) {
-
+    public NumberGame(InputStream inputStream){
+        this.scanner = new Scanner(inputStream);
     }
 
     public int generateNumber(int maxNumber) {
@@ -69,5 +73,30 @@ public class NumberGame {
 
     public String displayScore() {
         return "Current Score: "+ score;
+    }
+
+    private void play(){
+        int guessLeft = 8;
+        int number = generateNumber(10);
+        String answer;
+        do{
+            guessLeft--;
+            answer = getAnswer();
+
+        } while (!validateGuess(answer, number)&&guessLeft!=0);
+        String results = results(guessLeft);
+        this.score += calcScore(results);
+    }
+
+    public static void main(String[] args) {
+        boolean play = true;
+        NumberGame numberGame = new NumberGame();
+        System.out.println("Hi :)\n Welcome To Number Game.\n");
+        while (play){
+            numberGame.play();
+            play = numberGame.playAgain();
+            System.out.println(numberGame.displayScore());
+        }
+
     }
 }
