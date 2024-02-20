@@ -31,4 +31,20 @@ public class NumberGame {
     public boolean validateInput(String userInput) {
         return userInput.matches("\\d+");
     }
+
+        public boolean validateGuess(String guess, int number) {
+        int guessNumber = Integer.parseInt(guess);
+
+        if(compareTo(guessNumber,number) ==0) return true;
+        else if (compareTo(guessNumber,number) < 0){
+            System.out.println("Lower");
+            return false;
+        }
+        System.out.println("Higher");
+        return false;
+    }
+
+    public short compareTo(int guess, int number) {
+        return (short) (number - guess);
+    }
 }
