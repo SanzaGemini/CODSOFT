@@ -19,4 +19,13 @@ public class NumberGameTest {
 
         Assertions.assertEquals("10",numberGame.getAnswer());
     }
+
+    @Test
+    public void validateGuessDataType(){
+        numberGame = new NumberGame();
+        Assertions.assertFalse(numberGame.validateInput("Guess"));
+        Assertions.assertTrue(numberGame.validateInput("1"));
+        Assertions.assertTrue(numberGame.validateInput("100"));
+        Assertions.assertFalse(numberGame.validateInput("13u"));
+    }
 }
