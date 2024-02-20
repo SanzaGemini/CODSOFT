@@ -28,4 +28,20 @@ public class NumberGameTest {
         Assertions.assertTrue(numberGame.validateInput("100"));
         Assertions.assertFalse(numberGame.validateInput("13u"));
     }
+
+    @Test
+    public void compareTo(){
+        numberGame = new NumberGame();
+        Assertions.assertEquals(numberGame.compareTo(10,5),-5);
+        Assertions.assertEquals(numberGame.compareTo(10,7),-3);
+        Assertions.assertEquals(numberGame.compareTo(10,15),5);
+    }
+
+    @Test
+    public void validateGuess(){
+        numberGame = new NumberGame();
+
+        Assertions.assertFalse(numberGame.validateGuess("10",200));
+        Assertions.assertTrue(numberGame.validateGuess("20",20));
+    }
 }
