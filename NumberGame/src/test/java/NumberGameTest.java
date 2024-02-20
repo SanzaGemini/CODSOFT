@@ -44,4 +44,18 @@ public class NumberGameTest {
         Assertions.assertFalse(numberGame.validateGuess("10",200));
         Assertions.assertTrue(numberGame.validateGuess("20",20));
     }
+
+     @Test
+    public void results(){
+        numberGame = new NumberGame();
+        Assertions.assertEquals("You have guessed correctly",numberGame.results(5));
+        Assertions.assertEquals("You are out of guesses",numberGame.results(0));
+    }
+
+    @Test
+    public void calcScore(){
+        numberGame = new NumberGame();
+        Assertions.assertEquals(1,numberGame.calcScore("You have guessed correctly"));
+        Assertions.assertEquals(-1,numberGame.calcScore("You are out of guesses"));
+    }
 }
