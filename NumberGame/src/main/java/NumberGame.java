@@ -47,4 +47,18 @@ public class NumberGame {
     public short compareTo(int guess, int number) {
         return (short) (number - guess);
     }
+
+     public int calcScore(String results){
+        if (results.equals("You have guessed correctly")) {
+          return 1;
+        }
+        return -1;
+    }
+
+    public String results(int guessLeft){
+        if (guessLeft > 0) {
+            return "You have guessed correctly";
+        }
+        return "You are out of guesses";
+    }
 }
