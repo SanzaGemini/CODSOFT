@@ -58,4 +58,30 @@ public class NumberGameTest {
         Assertions.assertEquals(1,numberGame.calcScore("You have guessed correctly"));
         Assertions.assertEquals(-1,numberGame.calcScore("You are out of guesses"));
     }
+
+     @Test
+    public void playAgainYes(){
+        String guess = "Y\n";
+        InputStream inputStream = new ByteArrayInputStream(guess.getBytes());
+
+        numberGame = new NumberGame(inputStream);
+
+        Assertions.assertTrue(numberGame.playAgain());
+    }
+
+    @Test
+    public void playAgainNo(){
+        String guess = "N\n";
+        InputStream inputStream = new ByteArrayInputStream(guess.getBytes());
+
+        numberGame = new NumberGame(inputStream);
+
+        Assertions.assertFalse(numberGame.playAgain());
+    }
+
+    @Test
+    public void displayScore(){
+        numberGame = new NumberGame();
+        Assertions.assertEquals("Current Score: 0",numberGame.displayScore());
+    }
 }
