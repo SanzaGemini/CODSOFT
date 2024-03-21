@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d768a1c-4ef8-458a-ba5b-8384fcdab5b1" name="Changes" comment="" />
+    <list default="true" id="da6fc86b-6548-4592-a63e-7bd06c2a898b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NumberGame/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NumberGame/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NumberGame/src/test/java/NumberGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NumberGame/src/test/java/NumberGameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/StudentGradeCalculator.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StudentGradeCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StudentGradeCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StudentGradeCalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +28,7 @@
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 3
 }]]></component>
-  <component name="ProjectId" id="2e0Wonf7nIvIdc2ib73XDTVIxZE" />
+  <component name="ProjectId" id="2e0hXpj0xHeAK4KbtNUjUtrVfBp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -23,17 +38,51 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/sanelevilakazi/CODSOFT"
+    "last_opened_file_path": "/home/sanelevilakazi/CODSOFT/StudentGradeCalculator/src/test/java",
+    "onboarding.tips.debug.path": "/home/sanelevilakazi/CODSOFT/StudentGradeCalculator/src/main/java/codsoft/org/Main.java"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java" />
+      <recent name="$PROJECT_DIR$/src/main/java/codsoft/org" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.StudentGradeCalculatorTest">
+    <configuration name="StudentGradeCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StudentGradeCalculator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StudentGradeCalculatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentGradeCalculatorTest.VaidateMarks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StudentGradeCalculator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StudentGradeCalculatorTest" />
+      <option name="METHOD_NAME" value="VaidateMarks" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.StudentGradeCalculatorTest" />
+        <item itemvalue="JUnit.StudentGradeCalculatorTest.VaidateMarks" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3d768a1c-4ef8-458a-ba5b-8384fcdab5b1" name="Changes" comment="" />
-      <created>1711042152715</created>
+      <changelist id="da6fc86b-6548-4592-a63e-7bd06c2a898b" name="Changes" comment="" />
+      <created>1711047517555</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1711042152715</updated>
+      <updated>1711047517555</updated>
     </task>
     <servers />
   </component>
