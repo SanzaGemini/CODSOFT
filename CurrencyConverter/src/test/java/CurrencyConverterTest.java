@@ -15,7 +15,7 @@ public class CurrencyConverterTest {
 
         CurrencyConverter converter = new CurrencyConverter(inputStream);
 
-        assertEquals("USD",converter.getBaseCurrency());
+        assertEquals("USD",converter.getCurrency("BASE"));
     }
 
     @Test
@@ -25,6 +25,6 @@ public class CurrencyConverterTest {
 
         CurrencyConverter converter = new CurrencyConverter(inputStream);
 
-        assertEquals("USD",converter.getBaseCurrency());
+        assertEquals("USD",converter.getCurrency("BASE"));
     }
 }

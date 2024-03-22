@@ -14,6 +14,7 @@ public class CurrencyConverter {
     );
 
     private String baseCurrency;
+    private String targetCurrency;
 
     public CurrencyConverter(){
         this.scanner = new Scanner(System.in);
@@ -22,21 +23,45 @@ public class CurrencyConverter {
         this.scanner = new Scanner(inputStream);
     }
 
-    public String getBaseCurrency() {
+    public String getCurrency(String type) {
         int option = 1;
-        System.out.println("Select Base Currency From the List Below: ");
+        System.out.println("Select "+type+" Currency From the List Below: ");
         for (String currency:currencyCodes
              ) {
             System.out.println(option +": "+ currency);
             option++;
         }
-        baseCurrency = scanner.nextLine();
+        String currency = scanner.nextLine();
 
-        return validateCurrency(baseCurrency) ? baseCurrency : getBaseCurrency() ;
+        return validateCurrency(currency) ? currency : getCurrency(type) ;
     }
 
     private boolean validateCurrency(String currency){
         return currencyCodes.contains(currency);
     }
+
+    public void setBaseCurrency(String currency){
+        this.baseCurrency = currency;
+    }
+
+    public void setTargetCurrency(String targetCurrency) {
+        this.targetCurrency = targetCurrency;
+    }
+
+    public boolean convertAgain(){
+        System.out.println("Would You Like To Convert Again? (Yes/Y or No/N)");
+        String answer = scanner.nextLine();
+        return answer.equalsIgnoreCase("Yes") || answer.equalsIgnoreCase("y");
+    }
+
+    public static void main(String[] args) {
+        CurrencyConverter converter = new CurrencyConverter();
+        do{
+            converter.setBaseCurrency(converter.getCurrency("Base"));
+            converter.setTargetCurrency(converter.getCurrency("Target"));
+        } while (converter.convertAgain());
+    }
+
+
 
 }
