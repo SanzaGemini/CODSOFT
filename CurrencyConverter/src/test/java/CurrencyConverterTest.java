@@ -27,4 +27,5 @@ public class CurrencyConverterTest {
 
         assertEquals("USD",converter.getCurrency("BASE"));
     }
+
 }

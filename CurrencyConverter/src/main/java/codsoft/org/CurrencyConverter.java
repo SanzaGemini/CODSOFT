@@ -1,6 +1,12 @@
 package codsoft.org;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.util.List;
 import java.util.Scanner;
 import java.net.HttpURLConnection;
@@ -52,6 +58,32 @@ public class CurrencyConverter {
         System.out.println("Would You Like To Convert Again? (Yes/Y or No/N)");
         String answer = scanner.nextLine();
         return answer.equalsIgnoreCase("Yes") || answer.equalsIgnoreCase("y");
+    }
+
+    private String getExchangeRate() throws IOException {
+
+        URL url = new URL("https://openexchangerates.org/api/latest.json?app_id=9aa1826c22-d7ede20f04-sar57z");
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+
+        int responseCode = conn.getResponseCode();
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+            return getResponse(conn);
+        } else {
+            System.out.println("Failed to fetch exchange rates. Response code: " + responseCode);
+            return null;
+        }
+    }
+
+    private String getResponse(HttpURLConnection connection) throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        String inputLine;
+        StringBuilder response = new StringBuilder();
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+        return response.toString();
     }
 
     public static void main(String[] args) {
