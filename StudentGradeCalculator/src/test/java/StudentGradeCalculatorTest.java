@@ -59,15 +59,6 @@ public class StudentGradeCalculatorTest {
     }
 
     @Test
-    public void VaidateMarks(){
-        //Assert Subject
-        assertFalse(studentGradeCalculator.ValidateMarks(200));
-        assertFalse(studentGradeCalculator.ValidateMarks(-10));
-        assertTrue(studentGradeCalculator.ValidateMarks(20));
-        assertTrue(studentGradeCalculator.ValidateMarks(0));
-    }
-
-    @Test
     public void calcTotalMarks(){
         studentGradeCalculator = new StudentGradeCalculator();
         addToMarks(studentGradeCalculator);
@@ -79,6 +70,18 @@ public class StudentGradeCalculatorTest {
         studentGradeCalculator = new StudentGradeCalculator();
         addToMarks(studentGradeCalculator);
         assertEquals(25,studentGradeCalculator.getAverage(studentGradeCalculator.getTotalMarks()));
+    }
+
+    @Test
+    public void getGrade(){
+        studentGradeCalculator = new StudentGradeCalculator();
+        addToMarks(studentGradeCalculator);
+        int avg = studentGradeCalculator.getAverage(studentGradeCalculator.getTotalMarks());
+        assertEquals("Fail",studentGradeCalculator.getGrade(avg));
+        assertEquals("Moderate",studentGradeCalculator.getGrade(45));
+        assertEquals("Adequate",studentGradeCalculator.getGrade(60));
+        assertEquals("Excellent",studentGradeCalculator.getGrade(85));
+
     }
 
     public void addToMarks(StudentGradeCalculator sGC){

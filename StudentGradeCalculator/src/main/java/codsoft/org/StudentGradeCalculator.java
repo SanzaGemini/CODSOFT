@@ -66,4 +66,64 @@ public class StudentGradeCalculator {
     public int getAverage(int totalMarks) {
         return totalMarks/studentMarks.size();
     }
+
+    public String getGrade(int marks) {
+        if (marks >= 80) {
+            return "Excellent";
+        } else if (marks>=50) {
+            return "Adequate";
+        } else if (marks>=30) {
+            return "Moderate";
+        } else return "Fail";
+    }
+
+    public void displayWelcome(){
+        System.out.println("Welcome To The Student Grade Calculator.");
+        System.out.println("These are the available subjects on the system:");
+        int count = 1;
+        for (String subject: subjects
+             ) {
+            System.out.println(count +": "+ subject.toUpperCase());
+            count++;
+        }
+        System.out.println();
+    }
+
+    public boolean addAnotherSubject(){
+        System.out.println("Would You Like To Add Another Subject? (Yes/Y or No/N");
+        String answer = scanner.nextLine();
+        return answer.equalsIgnoreCase("Yes") || answer.equalsIgnoreCase("y");
+    }
+    public void displayMarks(){
+        System.out.println("===================\nSubjects And Marks");
+        System.out.println("======================");
+        for (String subject: studentMarks.keySet()
+             ) {
+            System.out.println(subject.toUpperCase()+"||"+studentMarks.get(subject));
+            System.out.println("======================");
+        }
+        int total = getTotalMarks();
+        int avg = getAverage(total);
+        String grade = getGrade(avg);
+
+        System.out.println("Total: " + total);
+        System.out.println("Average: " + avg);
+        System.out.println("Final Grade: " + grade);
+
+
+    }
+
+    public static void main(String[] args) {
+        StudentGradeCalculator sGC = new StudentGradeCalculator();
+        sGC.displayWelcome();
+        do {
+            String subject = sGC.getSubject();
+            int marks = sGC.getMarks();
+            sGC.addSubjectAndMarks(subject, marks);
+        } while (sGC.addAnotherSubject());
+
+        sGC.displayMarks();
+
+
+    }
 }

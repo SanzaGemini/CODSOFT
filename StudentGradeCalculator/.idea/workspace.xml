@@ -8,14 +8,8 @@
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NumberGame/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NumberGame/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NumberGame/src/test/java/NumberGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NumberGame/src/test/java/NumberGameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/StudentGradeCalculator.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StudentGradeCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/codsoft/org/StudentGradeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codsoft/org/StudentGradeCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StudentGradeCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StudentGradeCalculatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,30 +19,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2e0hXpj0xHeAK4KbtNUjUtrVfBp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/sanelevilakazi/CODSOFT/StudentGradeCalculator/src/test/java",
-    "onboarding.tips.debug.path": "/home/sanelevilakazi/CODSOFT/StudentGradeCalculator/src/main/java/codsoft/org/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/sanelevilakazi/CODSOFT/StudentGradeCalculator/src/test/java&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/sanelevilakazi/CODSOFT/StudentGradeCalculator/src/main/java/codsoft/org/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java" />
       <recent name="$PROJECT_DIR$/src/main/java/codsoft/org" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StudentGradeCalculatorTest">
+  <component name="RunManager">
     <configuration name="StudentGradeCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="StudentGradeCalculator" />
       <option name="PACKAGE_NAME" value="" />
