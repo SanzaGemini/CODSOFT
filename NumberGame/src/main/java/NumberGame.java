@@ -210,6 +210,7 @@ public class NumberGame {
 
         // Continue the game until the user guesses the correct number or runs out of guesses
         do {
+            System.out.println("Number Of Guesses Left: " + guessLeft);
             // Decrement the number of guesses left
             guessLeft--;
 
@@ -240,7 +241,7 @@ public class NumberGame {
         NumberGame numberGame = new NumberGame(); // Create a new instance of the NumberGame
 
         // Display a welcome message
-        System.out.println("Hi :)\n Welcome To Number Game.\n");
+        System.out.println("Hi :)\nWelcome To Number Game.\n");
 
         // Game loop
         while (play) {
