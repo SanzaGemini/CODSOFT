@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="da6fc86b-6548-4592-a63e-7bd06c2a898b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CurrencyConverter/src/main/java/codsoft/org/CurrencyConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CurrencyConverter/src/main/java/codsoft/org/CurrencyConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NumberGame/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NumberGame/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NumberGame/src/test/java/NumberGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NumberGame/src/test/java/NumberGameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/codsoft/org/StudentGradeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codsoft/org/StudentGradeCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StudentGradeCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StudentGradeCalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +43,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/codsoft/org" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.StudentGradeCalculatorTest">
     <configuration name="StudentGradeCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="StudentGradeCalculator" />
       <option name="PACKAGE_NAME" value="" />
