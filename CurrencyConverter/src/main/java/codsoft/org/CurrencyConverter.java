@@ -121,14 +121,12 @@ public class CurrencyConverter {
         return exchangeRate.get(code).getAsFloat();
     }
     private float calcBaseToUSD(float baseValue){
-        if (baseValue <1) {
-            return amount / baseValue;
-        } return amount * baseValue;
+        return amount / baseValue;
     }
 
     public float calcAmount(float baseValue,float targetValue){
         float exchangeRate = calcBaseToUSD(baseValue);
-        return exchangeRate * targetValue;
+        return (float) ((float) Math.round(exchangeRate * targetValue*100.0)/100.0);
     }
     public void calcExchangeAmount() throws IOException {
         JsonObject exchangeRates = exchangeAmount();
