@@ -28,4 +28,35 @@ public class CurrencyConverterTest {
         assertEquals("USD",converter.getCurrency("BASE"));
     }
 
+    @Test
+    public void getAmount(){
+        String amount = "123\n";
+        InputStream inputStream = new ByteArrayInputStream(amount.getBytes());
+
+        CurrencyConverter converter = new CurrencyConverter(inputStream);
+
+        assertEquals(123,converter.getAmount());
+    }
+
+    @Test
+    public void getInvalidAmount(){
+        String amount = "abc\n123\n";
+        InputStream inputStream = new ByteArrayInputStream(amount.getBytes());
+
+        CurrencyConverter converter = new CurrencyConverter(inputStream);
+
+        assertEquals(123,converter.getAmount());
+    }
+
+    @Test
+    public void calcAmount(){
+        String amount = "10\n";
+        InputStream inputStream = new ByteArrayInputStream(amount.getBytes());
+
+        CurrencyConverter converter = new CurrencyConverter(inputStream);
+        converter.setAmount(converter.getAmount());
+
+        assertEquals(100,converter.calcAmount(1,10));
+    }
+
 }

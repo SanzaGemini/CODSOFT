@@ -1,12 +1,14 @@
 package codsoft.org;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
+import java.util.IllegalFormatConversionException;
 import java.util.List;
 import java.util.Scanner;
 import java.net.HttpURLConnection;
@@ -21,6 +23,8 @@ public class CurrencyConverter {
 
     private String baseCurrency;
     private String targetCurrency;
+
+    private int amount;
 
     public CurrencyConverter(){
         this.scanner = new Scanner(System.in);
@@ -61,8 +65,9 @@ public class CurrencyConverter {
     }
 
     private String getExchangeRate() throws IOException {
-
-        URL url = new URL("https://openexchangerates.org/api/latest.json?app_id=9aa1826c22-d7ede20f04-sar57z");
+        //https://openexchangerates.org/api/currencies.json?app_id=79b376529ee94cbea8fb9308fa9e6cfc
+        //"https://openexchangerates.org/api/latest.json?app_id=79b376529ee94cbea8fb9308fa9e6cfc&base="
+        URL url = new URL("https://openexchangerates.org/api/latest.json?app_id=79b376529ee94cbea8fb9308fa9e6cfc");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
 
@@ -85,15 +90,60 @@ public class CurrencyConverter {
         in.close();
         return response.toString();
     }
+    public int getAmount() {
+        System.out.println("Please Enter The Amount: ");
+        String stringAmount = this.scanner.nextLine();
+        return validateAmount(stringAmount) ? Integer.parseInt(stringAmount): getAmount();
+    }
 
-    public static void main(String[] args) {
-        CurrencyConverter converter = new CurrencyConverter();
-        do{
-            converter.setBaseCurrency(converter.getCurrency("Base"));
-            converter.setTargetCurrency(converter.getCurrency("Target"));
-        } while (converter.convertAgain());
+    private boolean validateAmount(String stringAmount){
+        try{
+            int intAmount = Integer.parseInt(stringAmount);
+            return intAmount >= 0;
+        } catch (IllegalFormatConversionException | NumberFormatException e){
+            return false;
+        }
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
 
 
+    private JsonObject exchangeAmount() throws IOException {
+        String exchangeRate = getExchangeRate();
+        Gson gson = new Gson();
+        return gson.fromJson(exchangeRate, JsonObject.class).get("rates").getAsJsonObject();
+    }
+
+    private float getCurrencyValue(JsonObject exchangeRate,String code){
+        return exchangeRate.get(code).getAsFloat();
+    }
+    private float calcBaseToUSD(float baseValue){
+        if (baseValue <1) {
+            return amount / baseValue;
+        } return amount * baseValue;
+    }
+
+    public float calcAmount(float baseValue,float targetValue){
+        float exchangeRate = calcBaseToUSD(baseValue);
+        return exchangeRate * targetValue;
+    }
+    public void calcExchangeAmount() throws IOException {
+        JsonObject exchangeRates = exchangeAmount();
+        float baseCurrencyVsUsd = getCurrencyValue(exchangeRates,baseCurrency);
+        float targetCurrencyVsUsd = getCurrencyValue(exchangeRates,targetCurrency);
+        System.out.println(baseCurrency+": " + amount);
+        System.out.println(targetCurrency+": "+ calcAmount(baseCurrencyVsUsd,targetCurrencyVsUsd));
+    }
+    public static void main(String[] args) throws IOException {
+        CurrencyConverter converter = new CurrencyConverter();
+        do{
+            converter.setBaseCurrency(converter.getCurrency("Base"));
+            converter.setTargetCurrency(converter.getCurrency("Target"));
+            converter.setAmount(converter.getAmount());
+            converter.calcExchangeAmount();
+        } while (converter.convertAgain());
+    }
 }
