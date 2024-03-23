@@ -20,7 +20,7 @@ public class CurrencyConverter {
     private final Scanner scanner;
     // List of supported currency codes
     private final List<String> currencyCodes =List.of(
-            "USD", "EUR", "JPY", "GBP", "AUD", "CAD", "CHF"
+            "USD", "EUR", "JPY", "GBP", "AUD", "CAD", "CHF","ZAR"
             // Add more currency codes as needed
     );
 
@@ -57,7 +57,7 @@ public class CurrencyConverter {
             option++;
         }
         // Prompt the user to select a currency
-        String currency = scanner.nextLine();
+        String currency = scanner.nextLine().toUpperCase();
         // Validate the user input
         // Return the selected currency
         return validateCurrency(currency) ? currency : getCurrency(type) ;
